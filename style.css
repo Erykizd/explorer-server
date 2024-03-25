@@ -1,0 +1,27 @@
+body
+{
+    background-color: black;
+    color: white;
+}
+
+a:visited
+{
+    color: magenta;
+}
+
+a
+{
+    color: aqua;
+    font-size: large;
+}
+
+button
+{
+    font-size: 32px;
+}
+
+select
+{
+    width: 10%;
+    height: 30px;
+}
