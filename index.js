@@ -64,7 +64,10 @@ const server = http.createServer((request, response) =>
   else if (parsedUrl.action && parsedUrl.action == 'explore')
   {
     basePath = decodeURIComponent(parsedUrl.path);
-    basePath = basePath.replaceAll("/","\\");
+    if(system == "win32")
+    {
+      basePath = basePath.replaceAll("/","\\");
+    }
     getFilesInFolder(basePath, (err, files) =>
     {
       if (err)
@@ -143,9 +146,9 @@ function readFile(path)
 
 function readFileWithBuffer(filePath, response)
 {
-  if (system !== "win32")
+  if (system != "win32")
   {
-    path = path.replaceAll("\\", "/");
+    filePath = filePath.replaceAll("\\", "/");
   }
   try
   {

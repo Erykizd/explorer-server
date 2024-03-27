@@ -18,7 +18,9 @@ function setup()
     document.getElementById("up").addEventListener("click", ()=>
     {
         let path = folderPathTag.innerText;
-        path = path.substring(0, path.lastIndexOf('\\'));
+        let pathParts = path.split("\\");
+        pathParts.pop();
+        path = pathParts.join("\\");
         if(path.length>0)
         {
             setLinks(path);
